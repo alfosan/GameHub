@@ -1,36 +1,61 @@
+import { useState } from "react";
 import { games } from "@/data/games";
+import FiltersComponent from "@/components/filters/FiltersComponent";
 import Link from "next/link";
 
-export default function Home() {
+export default function HomePage() {
+  const [filteredGames, setFilteredGames] = useState(games);
+
+  const categories = ["Acción", "Aventura", "Puzzle"];
+
+  const handleSearch = (term: string) => {
+    setFilteredGames(
+      games.filter((game) =>
+        game.title.toLowerCase().includes(term.toLowerCase())
+      )
+    );
+  };
+
+  const handleCategorySelect = (category: string) => {
+    setFilteredGames(
+      games.filter(
+        (game) =>
+          !category || game.category.toLowerCase() === category.toLowerCase()
+      )
+    );
+  };
+
   return (
-    <main className="p-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-      {games.map((game, index) => (
-        <>
+    <main className="bg-red-500 min-h-screen p-8">
+      <h1 className="text-5xl font-bold mb-8 text-center text-white">
+        Bienvenido a ClickTopia
+      </h1>
+
+      {/* Componente de filtros */}
+      <FiltersComponent
+        categories={categories}
+        onSearch={handleSearch}
+        onCategorySelect={handleCategorySelect}
+      />
+
+      {/* Lista de juegos filtrados */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        {filteredGames.map((game) => (
           <Link href={`/games/${game.slug}`} key={game.slug}>
-            <div className="border rounded-2xl shadow hover:shadow-lg transition cursor-pointer bg-white">
+            <div className="game-card hover:scale-105 transform transition">
               <img
                 src={game.thumbnail}
                 alt={game.title}
-                className="w-full h-48 object-cover rounded-t-2xl"
+                className="game-card-img"
               />
-              <div className="p-4">
-                <h2 className="text-xl font-semibold">{game.title}</h2>
-                <p className="text-sm text-gray-600">{game.description}</p>
+              <div className="game-card-content">
+                <h2 className="game-card-title">{game.title}</h2>
+                <p className="game-card-description">{game.description}</p>
               </div>
             </div>
           </Link>
-          {index === 1 && (
-            <div className="w-full flex justify-center my-4">
-                <ins
-                className="adsbygoogle"
-                style={{ display: "block", width: "100%", height: "90px" }}
-                data-ad-client={process.env.NEXT_PUBLIC_ADSENSE_CLIENT}
-                data-ad-slot={process.env.NEXT_PUBLIC_ADSENSE_SLOT}
-                ></ins>
-            </div>
-          )}
-        </>
-      ))}
+        ))}
+      </div>
     </main>
   );
 }

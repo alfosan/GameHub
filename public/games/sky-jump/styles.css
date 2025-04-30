@@ -1,0 +1,17 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: linear-gradient(to bottom, #87CEEB, #fff);
+    font-family: 'Arial', sans-serif;
+  }
+  
+  canvas {
+    display: block;
+    width: 100%;
+    height: 100vh;
+  }
+  
+  #gameCanvas {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }

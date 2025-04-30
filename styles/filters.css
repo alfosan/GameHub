@@ -1,0 +1,19 @@
+input[type="text"] {
+    @apply w-full p-4 border rounded-lg shadow focus:outline-none focus:ring-2 focus:ring-blue-500;
+  }
+  
+  button {
+    @apply px-4 py-2 rounded-lg transition;
+  }
+  
+  button.bg-blue-500 {
+    @apply text-white;
+  }
+  
+  button.bg-gray-200 {
+    @apply text-gray-800;
+  }
+  
+  button:hover {
+    @apply bg-blue-600 text-white;
+  }
