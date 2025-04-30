@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Jump & Coins</title>
+  <style>
+    body, html { margin: 0; padding: 0; overflow: hidden; }
+    canvas { width: 100%; height: 100vh; display: block; }
+  </style>
+</head>
+<body>
+  <canvas id="gameCanvas"></canvas>
+  <script>
+    // Juego simple de ejemplo en JS puro (o lo que hayas exportado)
+    const canvas = document.getElementById("gameCanvas");
+    const ctx = canvas.getContext("2d");
+    let coins = parseInt(localStorage.getItem("coins") || "0");
+
+    function draw() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.fillStyle = "gold";
+      ctx.font = "30px Arial";
+      ctx.fillText(`Monedas: ${coins}`, 50, 50);
+    }
+
+    canvas.addEventListener("click", () => {
+      coins++;
+      localStorage.setItem("coins", coins.toString());
+      draw();
+    });
+
+    draw();
+  </script>
+</body>
+</html>
