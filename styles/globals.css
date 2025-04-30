@@ -3,17 +3,17 @@
 @tailwind utilities;
 
 body {
-  @apply bg-gray-100 text-gray-800 font-sans;
+  @apply bg-gray-900 text-gray-100 font-sans;
 }
 
 h1, h2, h3 {
-  @apply font-bold text-gray-800;
+  @apply font-bold text-gray-100;
 }
 
 a {
-  @apply text-blue-500 hover:text-blue-600 transition;
+  @apply text-indigo-400 hover:text-indigo-500 transition;
 }
 
 button {
-  @apply px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition;
+  @apply px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition;
 }

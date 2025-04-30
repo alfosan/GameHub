@@ -1,19 +1,19 @@
 input[type="text"] {
-    @apply w-full p-4 border rounded-lg shadow focus:outline-none focus:ring-2 focus:ring-blue-500;
-  }
-  
-  button {
-    @apply px-4 py-2 rounded-lg transition;
-  }
-  
-  button.bg-blue-500 {
-    @apply text-white;
-  }
-  
-  button.bg-gray-200 {
-    @apply text-gray-800;
-  }
-  
-  button:hover {
-    @apply bg-blue-600 text-white;
-  }
+  @apply w-full p-4 border rounded-lg shadow focus:outline-none focus:ring-2 focus:ring-indigo-500 bg-gray-800 text-white;
+}
+
+button {
+  @apply px-4 py-2 rounded-lg transition;
+}
+
+button.bg-blue-500 {
+  @apply bg-indigo-600 text-white shadow-lg;
+}
+
+button.bg-gray-200 {
+  @apply bg-gray-700 text-gray-300;
+}
+
+button:hover {
+  @apply bg-indigo-700 text-white shadow-xl;
+}

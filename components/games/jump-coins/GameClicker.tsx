@@ -83,7 +83,7 @@ export default function GameClicker() {
 
       {/* Contadores de materiales */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-        {materials.map((material, index) => (
+        {materials.map((material) => (
           <div
             key={material.name}
             className="border rounded-lg p-4 shadow bg-white flex flex-col items-center"
@@ -92,7 +92,7 @@ export default function GameClicker() {
             <h2 className="text-xl font-bold">{material.name}</h2>
             <p className="text-gray-600">Cantidad: {counts[material.key]}</p>
             <button
-              onClick={() => handleUpgrade(material.name.toLowerCase())}
+              onClick={() => handleUpgrade(material.key)}
               className="mt-4 px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition"
             >
               Mejorar (+1)

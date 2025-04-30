@@ -26,9 +26,9 @@ export default function HomePage() {
   };
 
   return (
-    <main className="bg-red-500 min-h-screen p-8">
-      <h1 className="text-5xl font-bold mb-8 text-center text-white">
-        Bienvenido a ClickTopia
+    <main className="bg-galaxy min-h-screen p-8 text-white">
+      <h1 className="text-5xl font-extrabold mb-8 text-center text-indigo-400 drop-shadow-lg">
+        Bienvenido a GameHub
       </h1>
 
       {/* Componente de filtros */}
@@ -39,7 +39,7 @@ export default function HomePage() {
       />
 
       {/* Lista de juegos filtrados */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mt-8">
         {filteredGames.map((game) => (
           <Link href={`/games/${game.slug}`} key={game.slug}>
             <div className="game-card hover:scale-105 transform transition">
