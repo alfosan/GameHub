@@ -20,4 +20,18 @@ export const games = [
     thumbnail: "/games/color-catcher/assets/cover.jpg",
     category: "Puzzle",
   },
+  {
+    slug: "planet-defense",
+    title: "Planet Defense",
+    description: "Defiende el planeta de los enemigos.",
+    thumbnail: "/games/planet-defense/assets/cover.jpg",
+    category: "Acción",
+  },
+  {
+    slug: "escape-the-beast",
+    title: "Escape the Beast",
+    description: "Ayuda a Little Red a escapar del lobo feroz.",
+    thumbnail: "/games/escape-the-beast/assets/cover.jpg",
+    category: "Aventura",
+  },
 ];
